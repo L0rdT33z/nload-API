@@ -4,6 +4,10 @@ API for nload - Real-time network traffic monitor with Flask
 <h3>Installation (no requirements :p)</h3>
 
 ```
+sudo apt install nload
+```
+
+```
 pip install subprocess
 pip install re
 pip install flask
