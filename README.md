@@ -1,5 +1,5 @@
 # nload-API
-API for NLoad - Real-time network traffic monitor with Flask
+API for nload - Real-time network traffic monitor with Flask
 
 <h3>Installation (no requirements :p)</h3>
 
