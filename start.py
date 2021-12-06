@@ -32,16 +32,16 @@ def match(test_str, regex):
 def home():
     res = getResult()
     result = {}
-    incoming_curr = match(res, r"9;56HCurr:\s([^\u001B]+)").strip()
-    incoming_avg = match(res, r"10;56HAvg:\s([^\u001B]+)").strip()
-    incoming_min = match(res, r"11;56HMin:\s([^\u001B]+)").strip()
-    incoming_max = match(res, r"12;56HMax:\s([^\u001B]+)").strip()
-    incoming_ttl = match(res, r"13;56HTtl:\s([^\u001B]+)").strip()
-    outgoing_curr = match(res, r"20;56HCurr:\s([^\u001B]+)").strip()
-    outgoing_avg = match(res, r"21;56HAvg:\s([^\u001B]+)").strip()
-    outgoing_min = match(res, r"22;56HMin:\s([^\u001B]+)").strip()
-    outgoing_max = match(res, r"23;56HMax:\s([^\u001B]+)").strip()
-    outgoing_ttl = match(res, r"24;56HTtl:\s([^\u001B]+)").strip()
+    incoming_curr = match(res, r"Incoming.+Curr:\s([^\u001B]+)").strip()
+    incoming_avg = match(res, r"Incoming.+Avg:\s([^\u001B]+)").strip()
+    incoming_min = match(res, r"Incoming.+Min:\s([^\u001B]+)").strip()
+    incoming_max = match(res, r"Incoming.+Max:\s([^\u001B]+)").strip()
+    incoming_ttl = match(res, r"Incoming.+Ttl:\s([^\u001B]+)").strip()
+    outgoing_curr = match(res, r"Outgoing.+Curr:\s([^\u001B]+)").strip()
+    outgoing_avg = match(res, r"Outgoing.+Avg:\s([^\u001B]+)").strip()
+    outgoing_min = match(res, r"Outgoing.+Min:\s([^\u001B]+)").strip()
+    outgoing_max = match(res, r"Outgoing.+Max:\s([^\u001B]+)").strip()
+    outgoing_ttl = match(res, r"Outgoing.+Ttl:\s([^\u001B]+)").strip()
     result['incoming'] = {}
     result['incoming']['curr'] = incoming_curr
     result['incoming']['avg'] = incoming_avg
