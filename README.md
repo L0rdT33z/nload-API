@@ -8,8 +8,6 @@ sudo apt install nload
 ```
 
 ```
-pip install subprocess
-pip install re
 pip install flask
 pip install json
 ```
