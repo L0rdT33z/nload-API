@@ -24,7 +24,7 @@ def getResult():
 
 
 def match(test_str, regex):
-    matches = re.findall(regex, test_str, re.MULTILINE)[0]
+    matches = re.findall(regex, test_str, re.MULTILINE)[0][1]
     return matches
 
 
@@ -32,16 +32,16 @@ def match(test_str, regex):
 def home():
     res = getResult()
     result = {}
-    incoming_curr = match(res, r"Incoming.+Curr:\s([^\u001B]+)").strip()
-    incoming_avg = match(res, r"Incoming.+Avg:\s([^\u001B]+)").strip()
-    incoming_min = match(res, r"Incoming.+Min:\s([^\u001B]+)").strip()
-    incoming_max = match(res, r"Incoming.+Max:\s([^\u001B]+)").strip()
-    incoming_ttl = match(res, r"Incoming.+Ttl:\s([^\u001B]+)").strip()
-    outgoing_curr = match(res, r"Outgoing.+Curr:\s([^\u001B]+)").strip()
-    outgoing_avg = match(res, r"Outgoing.+Avg:\s([^\u001B]+)").strip()
-    outgoing_min = match(res, r"Outgoing.+Min:\s([^\u001B]+)").strip()
-    outgoing_max = match(res, r"Outgoing.+Max:\s([^\u001B]+)").strip()
-    outgoing_ttl = match(res, r"Outgoing.+Ttl:\s([^\u001B]+)").strip()
+    incoming_curr = match(res, r"Incoming((?!Curr).)*Curr:\s([^\u001B]+)").strip()
+    incoming_avg = match(res, r"Incoming((?!Avg).)*Avg:\s([^\u001B]+)").strip()
+    incoming_min = match(res, r"Incoming((?!Min).)*Min:\s([^\u001B]+)").strip()
+    incoming_max = match(res, r"Incoming((?!Max).)*Max:\s([^\u001B]+)").strip()
+    incoming_ttl = match(res, r"Incoming((?!Ttl).)*Ttl:\s([^\u001B]+)").strip()
+    outgoing_curr = match(res, r"Outgoing((?!Curr).)*Curr:\s([^\u001B]+)").strip()
+    outgoing_avg = match(res, r"Outgoing((?!Avg).)*Avg:\s([^\u001B]+)").strip()
+    outgoing_min = match(res, r"Outgoing((?!Min).)*Min:\s([^\u001B]+)").strip()
+    outgoing_max = match(res, r"Outgoing((?!Max).)*Max:\s([^\u001B]+)").strip()
+    outgoing_ttl = match(res, r"Outgoing((?!Ttl).)*Ttl:\s([^\u001B]+)").strip()
     result['incoming'] = {}
     result['incoming']['curr'] = incoming_curr
     result['incoming']['avg'] = incoming_avg
